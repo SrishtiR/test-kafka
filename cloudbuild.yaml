@@ -1,6 +1,6 @@
 #cloudbuild.yaml
 steps:
-- name: ‘docker/compose:1.19.0’
+- name: ‘docker/compose:1.13.0’
   args: [‘-f’, ‘docker-compose.kafka.yml’,'up']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['tag', 'workspace_app:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
